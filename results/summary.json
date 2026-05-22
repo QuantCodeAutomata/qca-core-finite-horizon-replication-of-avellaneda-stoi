@@ -1,0 +1,58 @@
+{
+  "passed": 10,
+  "total": 10,
+  "tolerance_strict": 1e-10,
+  "tolerance_loose": 1e-08,
+  "checks": [
+    {
+      "check": "Frozen-inventory terminal condition v(x,s,q,T) = -exp(-gamma(x+qs))",
+      "passed": true,
+      "detail": "max relative error = 1.416e-14 on full grid"
+    },
+    {
+      "check": "Reservation bid/ask satisfy utility indifference",
+      "passed": true,
+      "detail": "max relative identity error = 1.138e-13"
+    },
+    {
+      "check": "Reservation price structural properties (zero-q, linearity, terminal collapse, bid-ask gap)",
+      "passed": true,
+      "detail": "all identities hold to numerical tolerance"
+    },
+    {
+      "check": "Ansatz r^a = theta(q)-theta(q-1), r^b = theta(q+1)-theta(q)",
+      "passed": true,
+      "detail": "max err = 1.563e-13"
+    },
+    {
+      "check": "FOC residuals zero under exponential intensities (asymptotic delta)",
+      "passed": true,
+      "detail": "max FOC residual = 3.997e-15"
+    },
+    {
+      "check": "Paper-table spreads: 1.29 (gamma=0.1), 1.33 (gamma=0.01), 1.15 (gamma=0.5)",
+      "passed": true,
+      "detail": "gamma=0.1->1.29, gamma=0.01->1.33, gamma=0.5->1.15"
+    },
+    {
+      "check": "Small-gamma limit: (2/gamma)ln(1+gamma/k) -> 2/k",
+      "passed": true,
+      "detail": "|gap| at gamma=1e-4 is 4.444e-05; monotone=True"
+    },
+    {
+      "check": "Infinite-horizon admissibility holds on |q|<=q_max",
+      "passed": true,
+      "detail": "q_max=10, gammas=[0.01, 0.1, 0.5]"
+    },
+    {
+      "check": "Infinite-horizon q=0 sanity: r^a > s > r^b",
+      "passed": true,
+      "detail": "verified for all gammas"
+    },
+    {
+      "check": "Infinite-horizon interior |q|<q_max: finite and r^a > r^b",
+      "passed": true,
+      "detail": "gamma=0.1: r^b(q=10) = -inf (refuse to buy at cap); gamma=0.5: r^b(q=10) = -inf (refuse to buy at cap)"
+    }
+  ]
+}
